@@ -12,6 +12,7 @@ class CLI
     #have the user to choose to continue with the program or exit. 
     def beginning
         puts "Oh no, you are on your last hit point! Would you like to attack you enemy?"
+        puts "Type 'Yes' to continue or 'Exit' to exit the game" 
         user_input = gets.strip.downcase
         if user_input == "y" || user_input == "yes"
             continue
@@ -34,7 +35,7 @@ class CLI
     end
 
     #display the different spells for the user
-    def spell_name
+    def spell_name(name)
         Spells.all.each.with_index(1) do |spells, index|
             puts "#{index}. #{spells.name}"
         end
@@ -43,7 +44,8 @@ class CLI
 
     #have the user input the number corresponding to the spell they want to look at
     def spell_choice
-        input_2 = gets.strip.to_i - 1
+        puts "Enter the spell number you would like to know more about."
+        index = gets.strip.to_i - 1
         Spells.all[index]
     end
 
