@@ -40,7 +40,7 @@ class CLI
             puts "#{index}. #{spells.name}"
         end
     end
-    binding pry
+    binding.pry
 
     #have the user input the number corresponding to the spell they want to look at
     def spell_choice
