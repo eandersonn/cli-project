@@ -2,7 +2,7 @@ require_relative '../environment.rb'
 
 class API
 
-    def self.start
+    def self.spell_name
         url = "https://www.dnd5eapi.co/api/spells"
         uri = URI(url)
         response = Net::HTTP.get(uri)
@@ -13,6 +13,10 @@ class API
             spell_intances.name = spells["name"]
             spell_intances.url = spells["url"]
         end
+    end
+
+    def self.spell_description
+
     end
 
 end
