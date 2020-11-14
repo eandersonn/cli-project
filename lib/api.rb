@@ -7,11 +7,11 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         new_response = JSON.parse(response)
+        array_of_spells = new_response["results"]
+        array_of_spells.each do |name|
+            Spells.new(name["name"], name["url"])
         end
-    end
-
-    def self.spell_description
-
+        binding.pry
     end
 
 end
