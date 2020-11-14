@@ -28,7 +28,6 @@ class CLI
         if input = "y" || input = "yes"
             spell_name_display
             spell_choice
-            spell_url
         else
             "Okay. RIP!"
         end
@@ -37,28 +36,30 @@ class CLI
     #display the different spells for the user
     def spell_name_display
         Spells.all.each.with_index(1) do |name, index|
-            puts "#{index}. #{spells.name}"
+            puts "#{index}. #{name.name}"
         end
     end
 
     #have the user input the number corresponding to the spell they want to look at
     def spell_choice
         puts "Enter the spell number you would like to know more about."
-        index = gets.strip.to_i - 1
+        input = gets.strip.to_i 
+        index = input - 1
         max_limit = Spells.all.length - 1
         until index.between?(0, max_limit)
             puts "Invalid choice, try again."
             index = gets.strip.to_i - 1
         end
-        
         spell_instance = Spells.all[index]
+        puts spell_instance.name
+        puts "Below is the url for the information on the spell you selected, enjoy!"
+        spell_url(spell_instance)
     end
 
     #display url for more details on the spell
-    def spell_url
-        Spells.all do |url|
-            puts "#{spells.url}"
-        end
+    def spell_url(name)
+        puts name.name
+        puts name.url
     end
 
 end
