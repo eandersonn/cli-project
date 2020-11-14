@@ -11,7 +11,6 @@ class API
         array_of_spells.each do |name|
             Spells.new(name["name"], name["url"])
         end
-        binding.pry
     end
 
 end
