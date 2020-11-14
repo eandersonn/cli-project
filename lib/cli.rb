@@ -45,7 +45,13 @@ class CLI
     def spell_choice
         puts "Enter the spell number you would like to know more about."
         index = gets.strip.to_i - 1
-        Spells.all[index]
+        max_limit = Spells.all.length - 1
+        until index.between?(0, max_limit)
+            puts "Invalid choice, try again."
+            index = gets.strip.to_i - 1
+        end
+        
+        spell_instance = Spells.all[index]
     end
 
     #display url for more details on the spell
