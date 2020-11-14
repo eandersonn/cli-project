@@ -1,6 +1,6 @@
 require_relative '../environment.rb'
 
-class Spells
+class Spell
 
     attr_accessor :name, :url
 
