@@ -1,4 +1,6 @@
 require_relative '../environment.rb'
+require_relative './spells.rb'
+
 
 class CLI
 
@@ -26,7 +28,7 @@ class CLI
         puts "You only have spells left. Would you like to know the different spells you can use?"
         input  = gets.strip.downcase
         if input = "y" || input = "yes"
-            spell_name
+            spell_name_display
             spell_choice
             spell_url
         else
@@ -35,8 +37,8 @@ class CLI
     end
 
     #display the different spells for the user
-    def spell_name(name)
-        Spells.all.each.with_index(1) do |names, index|
+    def spell_name_display
+        Spells.all.each.with_index(1) do |name, index|
             puts "#{index}. #{spells.name}"
         end
     end
