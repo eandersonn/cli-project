@@ -9,7 +9,7 @@ class API
         hash = Net::HTTP.get(uri)
         new_hash = JSON.parse(hash)
         array_of_spells = hash["results"]
-        array_of_spells.each do |spells|
+        array_of_spells.each do |name|
             binding.pry
         end
     end
