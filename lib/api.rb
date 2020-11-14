@@ -1,17 +1,16 @@
 require_relative '../environment.rb'
 
+require 'pry'
 class API
 
-    def self.spell_name
+    def self.start
         url = "https://www.dnd5eapi.co/api/spells"
         uri = URI(url)
-        response = Net::HTTP.get(uri)
-        new_response = JSON.parse(response)
+        hash = Net::HTTP.get(uri)
+        new_hash = JSON.parse(hash)
         array_of_spells = hash["results"]
         array_of_spells.each do |spells|
-            spell_intances = Spells.new
-            spell_intances.name = spells["name"]
-            spell_intances.url = spells["url"]
+            binding.pry
         end
     end
 
