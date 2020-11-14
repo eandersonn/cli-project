@@ -1,6 +1,5 @@
 require_relative '../environment.rb'
 
-require 'pry'
 class API
 
     def self.start
@@ -8,8 +7,10 @@ class API
         uri = URI(url)
         hash = Net::HTTP.get(uri)
         new_hash = JSON.parse(hash)
-        array_of_spells = hash["results"]
+        array_of_spells = new_hash["results"]
+        binding.pry
         array_of_spells.each do |name|
+            Spell.new(name["name"], name["url"])
             binding.pry
         end
     end
