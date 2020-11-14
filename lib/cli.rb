@@ -17,7 +17,7 @@ class CLI
         if user_input == "y" || user_input == "yes"
             continue
         else
-            puts "RIP!"
+            puts "See Ya!"
         end
     end
 
@@ -30,13 +30,13 @@ class CLI
             spell_choice
             spell_url
         else
-            "Okay. You have died!"
+            "Okay. RIP!"
         end
     end
 
     #display the different spells for the user
     def spell_name(name)
-        Spells.all.each.with_index(1) do |spells, index|
+        Spells.all.each.with_index(1) do |names, index|
             puts "#{index}. #{spells.name}"
         end
     end
@@ -50,7 +50,7 @@ class CLI
 
     #display url for more details on the spell
     def spell_url
-        Spells.all do |spells|
+        Spells.all do |url|
             puts "#{spells.url}"
         end
     end
