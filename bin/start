@@ -4,5 +4,3 @@ require_relative '../environment.rb'
 
 cli = CLI.new
 cli.welcome
-
-API.start
