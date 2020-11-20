@@ -16,4 +16,9 @@ class Spells
         @@all
     end
 
+    def self.find_by_name(name)
+        #find name compare to name argument
+        @@all.find {|spell| name == spell.name}
+    end
+
 end
