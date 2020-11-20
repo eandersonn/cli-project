@@ -6,13 +6,13 @@ class CLI
     def welcome 
         puts "Welcome to Dungeons and Dragons!"
         API.start
-        beginning
+        self.beginning #self class
     end
 
     #have the user to choose to continue with the program or exit. 
     def beginning
         puts "Oh no, you are on your last hit point! Would you like to attack you enemy?"
-        puts "Type 'Yes' to continue or 'Exit' to exit the game" 
+        puts "Type 'Yes' to continue or any other key to exit the game" 
         user_input = gets.strip.downcase
         if user_input == "y" || user_input == "yes"
             continue
