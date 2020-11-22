@@ -24,12 +24,13 @@ class CLI
     #ask the user if they want to know about the different spells they can use then allow the user to go to different methods for more information
     def continue
         puts "You only have spells left. Would you like to know the different spells you can use?"
-        input  = gets.strip.downcase
-        if input = "y" || input = "yes"
+        puts "Type 'yes' to continue or any other key to exit the program"
+        input = gets.strip.downcase
+        if input == "y" || input == "yes"
             spell_name_display
             spell_choice
         else
-            "Okay. RIP!"
+            puts "Okay. RIP!"
         end
     end
 
