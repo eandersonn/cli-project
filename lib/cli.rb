@@ -6,7 +6,7 @@ class CLI
     def welcome 
         puts "Welcome to Dungeons and Dragons!"
         API.start
-        self.beginning #self class
+        beginning #self class
     end
 
     #have the user to choose to continue with the program or exit. 
@@ -27,8 +27,8 @@ class CLI
         puts "Type 'yes' to continue or any other key to exit the program"
         input = gets.strip.downcase
         if input == "y" || input == "yes"
-            spell_name_display
-            spell_choice
+           spell_name_display
+           spell_choice
         else
             puts "Okay. RIP!"
         end
@@ -46,7 +46,7 @@ class CLI
         puts "Enter the spell number you would like to know more about."
         input = gets.strip.to_i 
         index = input - 1
-        max_limit = Spells.all.length - 1
+        max_limit = Spells.all.length - 1 #
         until index.between?(0, max_limit)
             puts "Invalid choice, try again."
             index = gets.strip.to_i - 1
