@@ -4,7 +4,7 @@ class API
 
     def self.start
         url = "https://www.dnd5eapi.co/api/spells"
-        uri = URI(url)
+        uri = URI(url) #changed the url into a specific object
         response = Net::HTTP.get(uri)
         new_response = JSON.parse(response)
         array_of_spells = new_response["results"]
